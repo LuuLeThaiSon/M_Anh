@@ -1,0 +1,58 @@
+:root {
+    --viewport-height: 100svh;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+    min-height: var(--viewport-height);
+    background:
+        radial-gradient(circle at 8% 12%, rgba(255, 175, 204, .28), transparent 23%),
+        radial-gradient(circle at 92% 18%, rgba(132, 155, 255, .24), transparent 26%),
+        radial-gradient(circle at 78% 92%, rgba(74, 202, 196, .18), transparent 30%),
+        linear-gradient(145deg, #121a38 0%, #25234c 48%, #122f45 100%);
+}
+
+.parent {
+    position: relative;
+    width: 100%;
+    min-height: var(--viewport-height);
+    overflow: hidden;
+}
+
+.parent::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: .2;
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, .7) 0 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255, 190, 218, .55) 0 1px, transparent 1.5px);
+    background-position: 0 0, 37px 53px;
+    background-size: 83px 97px, 127px 139px;
+    mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+}
+
+@media (max-width: 480px) {
+    .present-box {
+        transform-origin: center center;
+    }
+
+    .present-box.open {
+        transform: rotateX(-103deg) rotateY(-180deg) scale(.86);
+    }
+}
