@@ -59,7 +59,7 @@ function init() {
     window.setTimeout(function(){
       parent.classList.remove('card-returning');
     }, 3600);
-  }, false);
+   }, false);
   
   
   
