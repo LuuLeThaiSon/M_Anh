@@ -93,6 +93,47 @@
     transform: translate(-50%, -50%) scale(1) !important;
 }
 
+#back-to-present {
+    position: absolute;
+    z-index: 5;
+    top: 14px;
+    right: 16px;
+    border: 1px solid rgba(255, 255, 255, .55);
+    border-radius: 999px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    color: #fff;
+    background: rgba(70, 12, 18, .72);
+    box-shadow: 0 8px 20px rgba(35, 5, 10, .25);
+    font: 700 20px/1 Arial, sans-serif;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+    transition: opacity .35s ease, transform .35s ease, visibility .35s;
+}
+
+#back-to-present:hover {
+    background: rgba(125, 24, 30, .9);
+    transform: translateY(-2px);
+}
+
+#back-to-present.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.parent.card-returning #card {
+    transition-duration: 3.6s;
+}
+
+/* The legacy sibling is kept hidden while the button inside the card is used. */
+#card + #back-to-present {
+    display: none;
+}
+
 @media (max-width: 480px) {
     #card {
         padding: 25px 18px 22px;
@@ -116,5 +157,10 @@
         width: min(145px, 38vw);
         height: min(145px, 38vw);
         padding: 6px;
+    }
+
+    #back-to-present {
+        top: 12px;
+        right: 12px;
     }
 }

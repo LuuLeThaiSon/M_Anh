@@ -6,6 +6,12 @@ var gift_image_url = giftImage || giftImageBase64;
 var nametag = document.getElementById("nametag");
 var present = document.getElementById("present");
 var presentImage = document.getElementById("present-image");
+var backToPresent = document.getElementById("back-to-present");
+var legacyBackButton = document.querySelector("#card + #back-to-present");
+
+if (legacyBackButton) {
+  legacyBackButton.remove();
+}
 
 function init() {
   var graphElem = document.querySelector('.present-box > .side.top .to');
@@ -39,6 +45,20 @@ function init() {
     present.classList.toggle("open");
     document.getElementById('card').classList.add('card-show');
     document.querySelector('.parent').classList.add('card-open');
+    backToPresent.classList.add('visible');
+  }, false);
+
+  backToPresent.addEventListener("click", function(e){
+    e.stopPropagation();
+    var parent = document.querySelector('.parent');
+    parent.classList.add('card-returning');
+    present.classList.remove("open");
+    document.getElementById('card').classList.remove('card-show');
+    parent.classList.remove('card-open');
+    backToPresent.classList.remove('visible');
+    window.setTimeout(function(){
+      parent.classList.remove('card-returning');
+    }, 3600);
   }, false);
   
   

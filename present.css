@@ -50,8 +50,8 @@ body {
     width: 200px;
     height: 200px;
     margin: auto;
-    -webkit-animation: rotate 11s alternate linear infinite;
-    animation: rotate 11s alternate linear infinite;
+    -webkit-animation: rotate 24s alternate linear infinite;
+    animation: rotate 24s alternate linear infinite;
     cursor: pointer;
 }
 
