@@ -50,12 +50,19 @@ body {
     width: 200px;
     height: 200px;
     margin: auto;
-    -webkit-animation: rotate 24s alternate linear infinite;
-    animation: rotate 24s alternate linear infinite;
+    -webkit-animation: rotate 14s alternate linear infinite;
+    animation: rotate 14s alternate linear infinite;
     cursor: pointer;
 }
 
 .present-box:hover {
+    -webkit-animation: staticFront 700ms ease forwards;
+    animation: staticFront 700ms ease forwards;
+}
+
+/* Touch screens do not have a real hover state, so pressing the gift
+   provides the same visual feedback before the click opens it. */
+.present-box:active {
     -webkit-animation: staticFront 700ms ease forwards;
     animation: staticFront 700ms ease forwards;
 }
