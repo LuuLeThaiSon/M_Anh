@@ -6,7 +6,7 @@ var gift_image_url = giftImage || giftImageBase64;
 var nametag = document.getElementById("nametag");
 var present = document.getElementById("present");
 var presentImage = document.getElementById("present-image");
-var backToPresent = document.getElementById("back-to-present");
+var backToPresent = document.getElementById("back-to-present-new");
 var legacyBackButton = document.querySelector("#card + #back-to-present");
 
 if (legacyBackButton) {

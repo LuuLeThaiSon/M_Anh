@@ -93,7 +93,7 @@
     transform: translate(-50%, -50%) scale(1) !important;
 }
 
-#back-to-present {
+#back-to-present-new {
     position: absolute;
     z-index: 5;
     top: 14px;
@@ -120,12 +120,12 @@
     transition: opacity .35s ease, transform .35s ease, visibility .35s;
 }
 
-#back-to-present:hover {
+#back-to-present-new:hover {
     background: linear-gradient(145deg, #ffabc2, #df5a85);
     transform: translateY(-2px);
 }
 
-#back-to-present.visible {
+#back-to-present-new.visible {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -165,7 +165,7 @@
         padding: 6px;
     }
 
-    #back-to-present {
+    #back-to-present-new {
         top: 12px;
         right: 12px;
     }
